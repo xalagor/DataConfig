@@ -11,15 +11,23 @@ struct FDcTestObjectRefs1
 {
 	GENERATED_BODY()
 
-	//	refs
-	UPROPERTY() TArray<UDcTestClass1*> RefObjectArr;
-	UPROPERTY() TSet<UDcTestClass1*> RefObjectSet;
-	UPROPERTY() TMap<FString, UDcTestClass1*> RefObjectMap;
+	        //      refs
 
-	//	inline
-	UPROPERTY() TArray<UDcBaseShape*> InlineObjectArr;
-	UPROPERTY() TSet<UDcBaseShape*> InlineObjectSet;
-	UPROPERTY() TMap<FString, UDcBaseShape*> InlineObjectMap;
+	        UPROPERTY() TArray<TObjectPtr<UDcTestClass1>> RefObjectArr;
+
+	        UPROPERTY() TSet<TObjectPtr<UDcTestClass1>> RefObjectSet;
+
+	        UPROPERTY() TMap<FString, TObjectPtr<UDcTestClass1>> RefObjectMap;
+
+	
+
+	        //      inline
+
+	        UPROPERTY() TArray<TObjectPtr<UDcBaseShape>> InlineObjectArr;
+
+	        UPROPERTY() TSet<TObjectPtr<UDcBaseShape>> InlineObjectSet;
+
+	        UPROPERTY() TMap<FString, TObjectPtr<UDcBaseShape>> InlineObjectMap;
 
 	void MakeFixture();
 };
