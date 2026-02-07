@@ -52,9 +52,8 @@ struct FDcEngineExtra5InstancedStruct2
 	UPROPERTY(EditAnywhere, meta = (BaseStruct = "/Script/DataConfigExtra.DcStructShapeBase"))
 	FInstancedStruct ShapeField1;
 
-	UPROPERTY(EditAnywhere, meta = (BaseStruct = "DcStructShapeBase"))
-	FInstancedStruct ShapeField2;
-};
+	        UPROPERTY(EditAnywhere, meta = (BaseStruct = "/Script/DataConfigExtra.DcStructShapeBase"))
+	        FInstancedStruct ShapeField2;};
 
 UCLASS()
 class UDcEngineExtra5InstancedStructDataAsset : public UPrimaryDataAsset
@@ -65,9 +64,8 @@ public:
 	UPROPERTY(EditAnywhere, meta = (BaseStruct = "/Script/DataConfigExtra.DcStructShapeBase"))
 	FInstancedStruct InstancedStruct1;
 
-	UPROPERTY(EditAnywhere, meta = (BaseStruct = "DcStructShapeBase"))
-	FInstancedStruct InstancedStruct2;
-
+	        UPROPERTY(EditAnywhere, meta = (BaseStruct = "/Script/DataConfigExtra.DcStructShapeBase"))
+	        FInstancedStruct InstancedStruct2;
 	UPROPERTY(EditAnywhere)
 	FInstancedStruct InstancedStruct3;
 };
