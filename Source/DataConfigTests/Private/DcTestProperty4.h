@@ -49,10 +49,13 @@ struct FDcTestArrayDim1
 	UPROPERTY() uint32 UInt32Arr[4] = {};
 	UPROPERTY() uint64 UInt64Arr[5] = {};
 
-	//	array/set/map array not allowed
-	UPROPERTY() UDcTestClass1* ObjectRefArr[2] = {};
-	UPROPERTY() UDcBaseShape* ObjectInlineArr[3] = {};
-	UPROPERTY() UClass* ClassArr[3] = {};
+	        //      array/set/map array not allowed
+
+	        UPROPERTY() TObjectPtr<UDcTestClass1> ObjectRefArr[2];
+
+	        UPROPERTY() TObjectPtr<UDcBaseShape> ObjectInlineArr[3];
+
+	        UPROPERTY() TObjectPtr<UClass> ClassArr[3];
 
 	UPROPERTY() TWeakObjectPtr<UObject> WeakObjectArr[2];
 	UPROPERTY() TLazyObjectPtr<UObject> LazyObjectArr[3];
@@ -91,8 +94,7 @@ public:
 	UPROPERTY() FName NameArr[2];
 	UPROPERTY() FString StringArr[3];
 
-	UPROPERTY() UDcTestArrayDimInner2* InlineObjectArr[2];
-
+	        UPROPERTY() TObjectPtr<UDcTestArrayDimInner2> InlineObjectArr[2];
 	void MakeFixture();
 };
 
@@ -147,13 +149,12 @@ struct FDcTestObjectRefs2
 {
 	GENERATED_BODY()
 
-	UPROPERTY() UDcTestClass1* TestClassObjectField = nullptr;
-	UPROPERTY() TWeakObjectPtr<UDcTestClass1> TestClassWeakObjectField;
-	UPROPERTY() TLazyObjectPtr<UDcTestClass1> TestClassLazyObjectField;
-	UPROPERTY() TSoftObjectPtr<UDcTestClass1> TestClassSoftObjectField;
-
-	UPROPERTY() UDcBaseShape* InlineShapeObjectField = nullptr;
-};
+	        UPROPERTY() TObjectPtr<UDcTestClass1> TestClassObjectField;
+	        UPROPERTY() TWeakObjectPtr<UDcTestClass1> TestClassWeakObjectField;
+	        UPROPERTY() TLazyObjectPtr<UDcTestClass1> TestClassLazyObjectField;
+	        UPROPERTY() TSoftObjectPtr<UDcTestClass1> TestClassSoftObjectField;
+	
+	        UPROPERTY() TObjectPtr<UDcBaseShape> InlineShapeObjectField;};
 
 UCLASS(BlueprintType, EditInlineNew, DefaultToInstanced)
 class UDcSelfReference1 : public UObject
@@ -162,7 +163,6 @@ class UDcSelfReference1 : public UObject
 
 public:
 
-	UPROPERTY() FString StrField;
-	UPROPERTY() UDcSelfReference1* RefField1;
-	UPROPERTY() UDcSelfReference1* RefField2;
-};
+	        UPROPERTY() FString StrField;
+	        UPROPERTY() TObjectPtr<UDcSelfReference1> RefField1;
+	        UPROPERTY() TObjectPtr<UDcSelfReference1> RefField2;};

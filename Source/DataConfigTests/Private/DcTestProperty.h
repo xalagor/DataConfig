@@ -66,8 +66,9 @@ struct FDcTestStruct2
 {
 	GENERATED_BODY()
 
-	//	other scalar types
-	UPROPERTY() UClass* ClassField = nullptr;
+	        //      other scalar types
+
+	        UPROPERTY() TObjectPtr<UClass> ClassField;
 	UPROPERTY() TWeakObjectPtr<UObject> WeakObjetField;
 	UPROPERTY() TLazyObjectPtr<UObject> LazyObjectField;
 	UPROPERTY() TSoftObjectPtr<UObject> SoftObjectField;
@@ -135,13 +136,19 @@ struct FDcTestStruct4
 	GENERATED_BODY()
 	DCEXTRA_ZEROINIT_CONSTRUCTOR(FDcTestStruct4)
 
-	//	inline object
-	UPROPERTY() UDcBaseShape* InlineObjectField1;
-	UPROPERTY() UDcBaseShape* InlineObjectField2;
+	        //      inline object
 
-	//	normal object
-	UPROPERTY() UDcTestClass1* NormalObjectField1;
-	UPROPERTY() UDcTestClass1* NormalObjectField2;
+	        UPROPERTY() TObjectPtr<UDcBaseShape> InlineObjectField1;
+
+	        UPROPERTY() TObjectPtr<UDcBaseShape> InlineObjectField2;
+
+	
+
+	        //      normal object
+
+	        UPROPERTY() TObjectPtr<UDcTestClass1> NormalObjectField1;
+
+	        UPROPERTY() TObjectPtr<UDcTestClass1> NormalObjectField2;
 };
 
 

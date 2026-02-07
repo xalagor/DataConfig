@@ -12,8 +12,7 @@ struct FDcTestExample2
 	UPROPERTY() FString StrField;
 	UPROPERTY() FString StrArrField[3];
 
-	UPROPERTY() UDcBaseShape* InlineField = nullptr;
-	UPROPERTY() UDcTestClass1* RefField = nullptr;
-
+	        UPROPERTY() TObjectPtr<UDcBaseShape> InlineField;
+	        UPROPERTY() TObjectPtr<UDcTestClass1> RefField;
 	void MakeFixture();
 };

@@ -22,7 +22,6 @@ struct FDcTestClassAccessControl
 	GENERATED_BODY()
 	DCEXTRA_ZEROINIT_CONSTRUCTOR(FDcTestClassAccessControl)
 
-	UPROPERTY() UDcBaseShape* InlineField;
-
-	UPROPERTY() UDcTestClass1* RefField;
-};
+	        UPROPERTY() TObjectPtr<UDcBaseShape> InlineField;
+	
+	        UPROPERTY() TObjectPtr<UDcTestClass1> RefField;};

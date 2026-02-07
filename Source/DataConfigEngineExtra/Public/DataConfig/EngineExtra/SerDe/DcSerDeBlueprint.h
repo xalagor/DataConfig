@@ -67,8 +67,7 @@ struct DATACONFIGENGINEEXTRA_API FDcEngineExtraTestStructWithBPInstance
 	GENERATED_BODY()
 	DCEXTRA_ZEROINIT_CONSTRUCTOR(FDcEngineExtraTestStructWithBPInstance)
 
-	UPROPERTY() UDcTestBPClassBase* InstanceField1;
-	UPROPERTY() UDcTestBPClassBase* InstanceField2;
-	UPROPERTY() UDcTestBPClassBase* InstanceField3;
-};
+	        UPROPERTY() TObjectPtr<UDcTestBPClassBase> InstanceField1;
+	        UPROPERTY() TObjectPtr<UDcTestBPClassBase> InstanceField2;
+	        UPROPERTY() TObjectPtr<UDcTestBPClassBase> InstanceField3;};
 

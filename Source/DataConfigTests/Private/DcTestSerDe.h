@@ -39,10 +39,9 @@ struct FDcTestStructShapeContainer1
 	GENERATED_BODY()
 	DCEXTRA_ZEROINIT_CONSTRUCTOR(FDcTestStructShapeContainer1)
 
-	UPROPERTY() UDcBaseShape* ShapeField1;
-	UPROPERTY() UDcBaseShape* ShapeField2;
-	UPROPERTY() UDcBaseShape* ShapeField3;
-
+	        UPROPERTY() TObjectPtr<UDcBaseShape> ShapeField1;
+	        UPROPERTY() TObjectPtr<UDcBaseShape> ShapeField2;
+	        UPROPERTY() TObjectPtr<UDcBaseShape> ShapeField3;
 	void MakeFixtureEmpty();
 	void MakeFixture();
 };
@@ -53,10 +52,9 @@ struct FDcTestStructObjectRef1
 	GENERATED_BODY()
 	DCEXTRA_ZEROINIT_CONSTRUCTOR(FDcTestStructObjectRef1)
 
-	UPROPERTY() UObject* ObjField1;
-	UPROPERTY() UObject* ObjField2;
-	UPROPERTY() UObject* ObjField3;
-};
+	        UPROPERTY() TObjectPtr<UObject> ObjField1;
+	        UPROPERTY() TObjectPtr<UObject> ObjField2;
+	        UPROPERTY() TObjectPtr<UObject> ObjField3;};
 
 USTRUCT()
 struct FDcTestStructSubClass1
@@ -73,9 +71,8 @@ struct FDcTestStructRefs1
 {
 	GENERATED_BODY()
 
-	UPROPERTY() UObject* ObjectField1 = nullptr;
-	UPROPERTY() UObject* ObjectField2 = nullptr;
-
+	        UPROPERTY() TObjectPtr<UObject> ObjectField1;
+	        UPROPERTY() TObjectPtr<UObject> ObjectField2;
 	UPROPERTY() TSoftObjectPtr<UObject> SoftField1;
 	UPROPERTY() TSoftObjectPtr<UObject> SoftField2;
 
@@ -94,9 +91,8 @@ struct FDcTestStructRefs2
 {
 	GENERATED_BODY()
 
-	UPROPERTY() UClass* RawClassField1 = nullptr;
-	UPROPERTY() UClass* RawClassField2 = nullptr;
-
+	        UPROPERTY() TObjectPtr<UClass> RawClassField1;
+	        UPROPERTY() TObjectPtr<UClass> RawClassField2;
 	UPROPERTY() TSubclassOf<UObject> SubClassField1;
 	UPROPERTY() TSubclassOf<UObject> SubClassField2;
 

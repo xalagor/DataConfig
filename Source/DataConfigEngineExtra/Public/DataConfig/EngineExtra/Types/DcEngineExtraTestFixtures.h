@@ -10,11 +10,10 @@ class UDcEngineExtraInstancedObjectDataAsset : public UPrimaryDataAsset
 	GENERATED_BODY()
 public:
 
-	UPROPERTY(EditAnywhere, Instanced)
-	UDcBaseShape* ShapeField1;
-
-	UPROPERTY(EditAnywhere, Instanced)
-	UDcBaseShape* ShapeField2;
-};
+	        UPROPERTY(EditAnywhere, Instanced)
+	        TObjectPtr<UDcBaseShape> ShapeField1;
+	
+	        UPROPERTY(EditAnywhere, Instanced)
+	        TObjectPtr<UDcBaseShape> ShapeField2;};
 
 
